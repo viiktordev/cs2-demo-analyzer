@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pro-coach-cs2</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo">pro<span>-coach</span>-cs2</h1>
+    <p class="status" id="status" data-state="loading">verificando API…</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Analisar demo</h2>
+
+      <form id="upload-form">
+        <label class="dropzone" id="dropzone" for="file-input">
+          <input type="file" id="file-input" name="demo" accept=".dem,.zst,.gz,.bz2" hidden>
+          <span class="dropzone-icon" aria-hidden="true">↓</span>
+          <span class="dropzone-text" id="dropzone-text">
+            Arraste um arquivo <code>.dem</code> aqui ou clique para escolher
+            <small>aceita também <code>.dem.zst</code>, <code>.dem.gz</code> e <code>.dem.bz2</code></small>
+          </span>
+        </label>
+
+        <div class="actions">
+          <button type="submit" id="submit-btn" disabled>Analisar</button>
+          <progress id="progress" value="0" max="100" hidden></progress>
+        </div>
+      </form>
+
+      <p class="feedback" id="feedback" role="status" hidden></p>
+    </section>
+
+    <section class="panel" id="roster-panel" hidden>
+      <h2>Escolha o jogador</h2>
+      <p class="hint" id="roster-hint"></p>
+      <div id="roster"></div>
+    </section>
+
+    <section class="panel" id="result-panel" hidden>
+      <h2>Resultado</h2>
+      <div id="result"></div>
+    </section>
+
+    <section class="panel" id="player-panel" hidden>
+      <h2>Detalhe do jogador</h2>
+      <div id="player-detail"></div>
+    </section>
+
+    <section class="panel" id="coaching-panel" hidden>
+      <h2>Análise da IA</h2>
+      <div id="coaching"></div>
+    </section>
+
+    <section class="panel" id="history-panel" hidden>
+      <h2>Histórico do jogador</h2>
+      <div id="history"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Demos enviadas</h2>
+      <div id="demo-list"><p class="empty">Nenhuma demo enviada ainda.</p></div>
+    </section>
+  </main>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# secrets — never commit these
+.env
+.env.*
+!.env.example
+
+# build artifacts
+bin/
+*.exe
+
+# demo files are large; keep them out of git
+*.dem
+*.dem.info
+uploads/
+data/
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/
